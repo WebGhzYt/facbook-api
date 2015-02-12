@@ -1,12 +1,15 @@
 source 'http://rubygems.org'
 
+gem 'certified', '~> 1.0.0'
 gem 'devise'
-
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 gem 'pg', '~> 0.18.1'
  ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'devise'
+
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'bootstrap-sass'

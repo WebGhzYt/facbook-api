@@ -1,19 +1,25 @@
+	
+
 <% if !(signed_in?) %>
 
 <div>
 
     <center><%= link_to "Registraion", new_client_registration_path , class: "btn btn-success" %></center>
+     <center>
+	
+		<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
+	 </center>
+
+
 </div>
 <div>
 
     <center><%= link_to "Login", new_client_session_path , class: "btn btn-success" %></center>
 </div>
 <% else %>
-	Hello, 
+	Hello, <%= @current_client_email %>
 	<br>
-	 <center>
-		<%= link_to "facebook-login", '#' , class: "btn btn-primary" %>
-	 </center>
+ 
 	  <center>
 		<%= link_to "Logout", destroy_client_session_path , method: "delete", class: "btn btn-success" %>
 	 </center>

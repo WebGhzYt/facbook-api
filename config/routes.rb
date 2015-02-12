@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :clients
+devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+   #devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+   # devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations", :passwords => "passwords" }
+  # devise_for :clients, :controllers => { :omniauth_callbacks => "clients/omniauth_callbacks" }
+  # resources :clients do
+  #       member do
+  #         get 'omniauth_callbacks/facebook'
+  #       end
+  # end
+   
+  # devise_for :clients
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
