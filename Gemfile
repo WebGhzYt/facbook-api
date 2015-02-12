@@ -4,7 +4,7 @@ gem 'certified', '~> 1.0.0'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-linkedin'
+gem 'omniauth-linkedin' 
 gem 'pg', '~> 0.18.1'
  ruby '2.0.0'
 

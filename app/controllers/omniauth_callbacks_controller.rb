@@ -9,4 +9,16 @@ def facebook
       redirect_to new_client_registration_url
     end
   end
+
+  def linkedin
+		    # auth = env["omniauth.auth"]
+		    @client = Client.connect_to_linkedin(request.env["omniauth.auth"],current_client)
+		    if @client.persisted?
+		      flash[:notice] = I18n.t "devise.omniauth_callbacks.success"
+		      sign_in_and_redirect @client, :event => :authentication
+		    else
+		      session["devise.linkedin_uid"] = request.env["omniauth.auth"]
+		      redirect_to new_client_registration_url
+		    end
+	end
 end

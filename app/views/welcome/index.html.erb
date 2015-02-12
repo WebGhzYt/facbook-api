@@ -4,12 +4,19 @@
 
 <div>
 
-    <center><%= link_to "Registraion", new_client_registration_path , class: "btn btn-success" %></center>
-     <center>
-	
+    <center>
+    	<%= link_to "Registraion", new_client_registration_path , class: "btn btn-success" %>
+    </center>
+
+     <center>	
 		<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
 	 </center>
-
+	 <center>
+	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin) %>
+	 </center>
+	<center>
+	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin) %>
+	 </center>
 
 </div>
 <div>
