@@ -1,38 +1,44 @@
-	
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
 <% if !(signed_in?) %>
-
 <div>
-
     <center>
     	<%= link_to "Registraion", new_client_registration_path , class: "btn btn-success"  %>
     </center>
-
-     <center>	
-		<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
-	 </center>
-	 <center>
-	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin),class: "btn btn-primary" %>
-	 </center>
-	<center>
-	 	<%= link_to "Sign in with Twitter", client_omniauth_authorize_path(:twitter),
-	 	class: "btn btn-primary"%>
-	 	<%#= link_to "Sign in with Twitter", '#',
-	 	class: "btn btn-primary"%>
-	 </center>
-<center>
-<%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
-</div>
-<div>
-
-    <center><%= link_to "Login", new_client_session_path , class: "btn btn-success" %></center>
-</div>
+    <center>
+    	<%= link_to "Login", new_client_session_path , class: "btn btn-success" %>
+	</center>
+    <div class="container">
+                   
+      	<div class="dropdown">
+        		<button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Social
+        			<span class="caret"></span>
+        		</button>
+        			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      				    <li role="presentation">	<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
+	 					  </li>
+				          <li role="presentation">	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin),class: "btn btn-primary" %>
+				          </li>
+          					<li role="presentation">	<%= link_to "Sign in with Twitter", client_omniauth_authorize_path(:twitter),class: "btn btn-primary"%>
+	 						</li>
+          					<li role="presentation"></li>
+          					<li role="presentation" class="divider"><%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
+							</li>
+     					     <li role="presentation"><%= link_to "Login", new_client_session_path , class: "btn btn-success" %></li>
+        				</ul>
+      				</div>
+    			</div><%#= link_to "Sign in with Twitter", '#',class: "btn btn-primary"%>
+			</div>
+		<div>
+	</div>
 <% else %>
 	Hello, <%= @current_client_email %>
 	<br>
- 
-	  <center>
-		<%= link_to "Logout", destroy_client_session_path , method: "delete", class: "btn btn-success" %>
-	 </center>
+ 		<center>
+			<%= link_to "Logout", destroy_client_session_path , method: "delete", class: "btn btn-success" %>
+		</center>
 <% end %>
+
+
 <center><h1>Welcome to facebook/linkedin/Twittor/google Api Integration</h1></center>
