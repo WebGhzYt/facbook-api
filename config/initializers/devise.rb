@@ -268,4 +268,7 @@ Devise.setup do |config|
   require 'omniauth-google-oauth2'
   config.omniauth :google_oauth2, "406096789487-iojt7lp2bbr3bivrd5spl3i1rm28v65a.apps.googleusercontent.com", "R2nU5HMyT2cMgM3MRnDk28bi", { access_type: "offline", approval_prompt: "" }
 
+  config.secret_key = '6d7790c31229e71bba012311ab1239402d9b44326fab4c66b58290660214e565e52c88dd489c19b5a0fdb3047d367bc155207effcef7b3ecab246177c16ce1af'
+
+
 end
