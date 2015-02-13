@@ -155,6 +155,8 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rdoc-data (4.0.1)
+      rdoc (~> 4.0)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     sass (3.4.9)
@@ -216,6 +218,7 @@ DEPENDENCIES
   omniauth-twitter
   pg (~> 0.18.1)
   rails (= 4.2.0.rc3)
+  rdoc-data (~> 4.0.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   turbolinks

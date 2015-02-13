@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'certified', '~> 1.0.0'
+gem 'rdoc-data', '~> 4.0.1'
 gem 'devise'
 gem 'omniauth'
 
