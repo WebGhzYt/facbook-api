@@ -3,8 +3,11 @@ source 'http://rubygems.org'
 gem 'certified', '~> 1.0.0'
 gem 'devise'
 gem 'omniauth'
+
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin' 
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 gem 'pg', '~> 0.18.1'
  ruby '2.0.0'
 

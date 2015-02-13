@@ -5,19 +5,23 @@
 <div>
 
     <center>
-    	<%= link_to "Registraion", new_client_registration_path , class: "btn btn-success" %>
+    	<%= link_to "Registraion", new_client_registration_path , class: "btn btn-success"  %>
     </center>
 
      <center>	
 		<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
 	 </center>
 	 <center>
-	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin) %>
+	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin),class: "btn btn-primary" %>
 	 </center>
 	<center>
-	 	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin) %>
+	 	<%= link_to "Sign in with Twitter", client_omniauth_authorize_path(:twitter),
+	 	class: "btn btn-primary"%>
+	 	<%#= link_to "Sign in with Twitter", '#',
+	 	class: "btn btn-primary"%>
 	 </center>
-
+<center>
+<%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
 </div>
 <div>
 
@@ -31,4 +35,4 @@
 		<%= link_to "Logout", destroy_client_session_path , method: "delete", class: "btn btn-success" %>
 	 </center>
 <% end %>
-<center><h1>Welcome to facebook Api Integration</h1></center>
+<center><h1>Welcome to facebook/linkedin/Twittor Api Integration</h1></center>

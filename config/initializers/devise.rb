@@ -261,4 +261,11 @@ Devise.setup do |config|
 
   require 'omniauth-linkedin'
   config.omniauth :linkedin, "787l8elnkdbp30", "7AlEstePY5qEelPT"
+
+  require 'omniauth-twitter'
+  config.omniauth :twitter, "E6cIgEs40At6TnfiqqFf2vHuG", "kXSq88dOVxVZYiURfxKc1ucEMgQtHMkGhPJl8QoDiTJ7Wfoitj"
+
+  require 'omniauth-google-oauth2'
+  config.omniauth :google_oauth2, "406096789487-iojt7lp2bbr3bivrd5spl3i1rm28v65a.apps.googleusercontent.com", "R2nU5HMyT2cMgM3MRnDk28bi", { access_type: "offline", approval_prompt: "" }
+
 end
