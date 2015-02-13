@@ -10,12 +10,11 @@
     	<%= link_to "Login", new_client_session_path , class: "btn btn-success" %>
 	</center>
     <div class="container">
-                   
-      	<div class="dropdown">
+        <div class="dropdown">
         		<button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Social
         			<span class="caret"></span>
         		</button>
-        			<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+        		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
       				    <li role="presentation">	<%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %>
 	 					  </li>
 				          <li role="presentation">	<%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin),class: "btn btn-primary" %>
@@ -31,6 +30,21 @@
     			</div><%#= link_to "Sign in with Twitter", '#',class: "btn btn-primary"%>
 			</div>
 		<div>
+	</div>
+	<div>
+		
+      				    <center><%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %></center>
+	 					
+				        <center><%= link_to "Sign in with Linkedin", client_omniauth_authorize_path(:linkedin),class: "btn btn-primary" %></center>
+				        
+          				<center><%= link_to "Sign in with Twitter", client_omniauth_authorize_path(:twitter),class: "btn btn-primary"%></center>
+	 					
+          				<center>
+          				<%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
+							<center>
+     					    <%= link_to "Login", new_client_session_path , class: "btn btn-success" %></center>
+        
+
 	</div>
 <% else %>
 	Hello, <%= @current_client_email %>
