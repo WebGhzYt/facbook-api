@@ -1,13 +1,13 @@
 class Customer < ActiveRecord::Base
-	 def paypal_url(return_path)
+	 def paypal_url(return_path,customer,count)
     values = {
         business: "engrohitjain5-facilitator@gmail.com",
         cmd: "_xclick",
         upload: 1,
         return: "#{Rails.application.secrets.app_host}#{return_path}",
-        invoice: id,
+        invoice: count,
         amount: 250,
-        item_name: 'Rohit Jain',
+        item_name: customer.email,
         item_number: '',
         quantity: '',
         notify_url: "#{Rails.application.secrets.app_host}/hook"
