@@ -4,13 +4,17 @@ gem 'certified', '~> 1.0.0'
 gem 'rdoc-data', '~> 4.0.1'
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-oauth2', '~> 1.2.0'
+ 	
 
+gem "omniauth-paypal" 
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin' 
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'pg', '~> 0.18.1'
- ruby '2.0.0'
+gem 'activemerchant', '~> 1.46.0'
+ # ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 

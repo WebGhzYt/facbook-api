@@ -23,7 +23,7 @@ def facebook
 	end
 
 	def twitter
-	    #auth = env["omniauth.auth"]
+	    auth = env["omniauth.auth"]
 
 	    @client = Client.find_for_twitter_oauth(request.env["omniauth.auth"],current_client)
 	    if @client.persisted?
@@ -48,6 +48,22 @@ def facebook
 	    end
 	end
 
+
+
+
+	# def paypal
+ # 	auth = env["omniauth.auth"]
+ #     @client = Client.find_for_paypal_oauth(request.env["omniauth.auth"], current_client)
+ 
+	#     if @client.persisted?
+	#       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "PayPal"
+	#       sign_in_and_redirect @client, :event => :authentication
+	#     else
+	#       session["devise.paypal_data"] = request.env["omniauth.auth"]
+	#       redirect_to new_client_registration_url
+	#       # redirect_to "#{Rails.application.secrets.app_host}#{return_path}"
+	#     end
+ #  end
 
 
 end

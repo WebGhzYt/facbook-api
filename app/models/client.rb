@@ -85,4 +85,19 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     end
   end
 
+  # def paypal_url(return_path)
+  #   values = {
+  #       business: "engrohitjain5-facilitator@gmail.com",
+  #       cmd: "_xclick",
+  #       upload: 1,
+  #       return: "#{Rails.application.secrets.app_host}#{return_path}",
+  #       invoice: id,
+  #       amount: product.price,
+  #       item_name: product.name,
+  #       item_number: product.id,
+  #       quantity: '1'
+  #   }
+  #   "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
+  # end
+
 end

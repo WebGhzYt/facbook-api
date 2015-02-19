@@ -1,14 +1,63 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   
+
+      <script type="text/javascript">
+            $(document).on('click', '.myinfo', function(){
+            $.ajax({
+              url: 'welcome/myinfo',
+              type: 'GET',
+              data:{
+                client_id: $('#client_id').val()
+                
+              },
+              success: function (result) {
+                alert($('#client_id').val());
+                
+                
+              }
+            })
+          })
+
+
+
+
+
+
+
+          $(document).on('click', '.edit', function(){
+            $.ajax({
+                url: '/welcome/edit',
+                type: "GET",
+              
+              data:{
+                client_id: $('#client_id').val()
+                
+              },
+              success: function (result) {
+                alert($('#client_id').val());
+              }
+            })
+          })
+
+
+      </script>
+      
 <% if !(signed_in?) %>
 <div>
+<center>
+      <%= link_to "Registraion For Donation", new_customer_path , class: "btn btn-success"  %>
+    </center
+    <br><br>
     <center>
-    	<%= link_to "Registraion", new_client_registration_path , class: "btn btn-success"  %>
+      <%= link_to "Registraion", new_client_registration_path , class: "btn btn-success"  %>
     </center>
+  
+    
     <center>
-    	<%= link_to "Login", new_client_session_path , class: "btn btn-success" %>
-	</center>
+      <%= link_to "Login", new_client_session_path , class: "btn btn-success" %>
+  </center>
+    
     <div class="container">
         <div class="dropdown">
         		<button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Social
@@ -24,7 +73,8 @@
           					<li role="presentation"></li>
           					<li role="presentation" class="divider"><%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
 							</li>
-     					     <li role="presentation"><%= link_to "Login", new_client_session_path , class: "btn btn-success" %></li>
+<!--      					     <li role="presentation"><%= link_to "Sign in with PayPal", client_omniauth_authorize_path(:paypal) , class: "btn btn-success" %></li>
+ -->
         				</ul>
       				</div>
     			</div><%#= link_to "Sign in with Twitter", '#',class: "btn btn-primary"%>
@@ -32,6 +82,7 @@
 		<div>
 	</div>
 	<div>
+
 		
       				    <center><%= link_to "Login-with-facebook", client_omniauth_authorize_path(:facebook) , class: "btn btn-primary" %></center>
 	 					
@@ -43,16 +94,74 @@
           				<%= link_to "Sign in with Google", client_omniauth_authorize_path(:google_oauth2),class: "btn btn-primary" %></center>
 							<center>
      					    <%= link_to "Login", new_client_session_path , class: "btn btn-success" %></center>
+                  <br>
+                  <br>
+                  
         
 
 	</div>
 <% else %>
-	Hello, <%= @current_client_email %>
+
+
+            <center>
+            <div id="myinfo">
+              wait for inforatmation
+            </div>
+
+              <%= hidden_field_tag :client_id, current_client.id %>
+                
+                <%= link_to "MyInfo", 'javascript:void(0)', class: 'myinfo' %>
+            </center>
+
+
+            <center>
+            <div id="edit">
+              wait for Edit
+            </div>
+
+              <%= hidden_field_tag :client_id, current_client.id %>
+                
+                <%= link_to "Edit", 'javascript:void(0)', class: 'edit' %>
+            </center>
+
+
+            
+
+
+
+
+	Hello, <%= @current_client_email %>,<%= @current_client.id%>
 	<br>
+
  		<center>
 			<%= link_to "Logout", destroy_client_session_path , method: "delete", class: "btn btn-success" %>
 		</center>
+
+  <center>
+    <%= link_to "Donation", customer_path(@current_client.id),class: "btn btn-primary" %>
+  </center>
+
+ <!--     <%@price_temp=250%>
+<%#= form_for Donate.new ,url: donate_index_path(@donate), method: :post do |f| %>
+      <%#f.hidden_field :client_id, :value => @current_client.id %>
+      <%# f.hidden_field :price, :value => @price_temp %>
+
+      <%#= f.submit "Donation(250)(INR)" %>
+<%# end %> -->
+
+      <%#= link_to "Donation(250)", donate_index_path(@donate,:client_id => current_client.id,:price => 250),:method=> :post,class: "btn btn-primary" %>
+      <!-- https://www.sandbox.paypal.com/home -->
+
+
+
+
+
+
+
+    
 <% end %>
 
 
 <center><h1>Welcome to facebook/linkedin/Twittor/google Api Integration</h1></center>
+
+

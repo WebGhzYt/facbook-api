@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+# post "paypal" => 'welcome#paypal_url'
 devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
    #devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
    # devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations", :passwords => "passwords" }
@@ -12,6 +14,12 @@ devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callback
   # devise_for :clients
 
   root 'welcome#index'
+  
+  resources :products
+  #post 'donation' => 'donate#donation'
+  # post 'donation' => 'donate#create' 
+  resources :donate
+  resources :customer
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,6 +29,8 @@ devise_for :clients, :controllers => { :omniauth_callbacks => "omniauth_callback
 
   # Example of regular route:
      get 'homepage' => 'welcome#home'
+     get 'myinfo' => 'welcome#myinfo'
+     
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

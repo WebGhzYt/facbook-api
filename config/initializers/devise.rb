@@ -256,6 +256,11 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  
+  require "omniauth-paypal" 
+  config.omniauth :paypal, "AfbTt6SEs-Xt-Y5i-CpMMwqiDtBSjgKP8FC8jsPFN6bUwV-bP3QCNQ1Bx13aZyPc227zNUhDluokCH7t", "EDNal9Gfjwoue6kf6g-oL0XEF1wei1wp3VsGE7fboY8evn9TVIStIaip55sf5uvSeNZe1T6MMrtjL7y2", sandbox: true, scope: "openid"
+  # :openid_redirect_uri  => "https://localhost:3000"
+
   require "omniauth-facebook"
   config.omniauth :facebook, "1608854492679292", "5728b9da5951f78ab984e3f8cb07c827"
 
@@ -269,6 +274,7 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, "406096789487-iojt7lp2bbr3bivrd5spl3i1rm28v65a.apps.googleusercontent.com", "R2nU5HMyT2cMgM3MRnDk28bi"
 
   config.secret_key = '6d7790c31229e71bba012311ab1239402d9b44326fab4c66b58290660214e565e52c88dd489c19b5a0fdb3047d367bc155207effcef7b3ecab246177c16ce1af'
+
 
 
 end
